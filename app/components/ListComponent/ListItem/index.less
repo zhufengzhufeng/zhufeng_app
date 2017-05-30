@@ -1,0 +1,35 @@
+.list-item{
+  display: flex;
+  line-height: 25px;
+  margin: 10px;
+  img{
+    width: 120px;
+    height: 90px;
+  }
+  .list-item-content{
+    padding-left: 2%;
+    position: relative;
+    width: 98%;
+    .distance{
+      position: absolute;
+      right:5px;
+      top:0;
+    }
+    strong{
+      color:red
+    }
+    p{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 150px;
+    }
+    div{
+      display: flex;
+      justify-content: space-between;
+      span{
+        color: #cccccc;
+      }
+    }
+  }
+}
