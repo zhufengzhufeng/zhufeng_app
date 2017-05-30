@@ -24,6 +24,11 @@ $ yarn add es6-promise whatwg-fetch --dev
 ```
 $ yarn add express
 ```
+
+## swipe插件
+```
+$ yarn add swipe-js-iso react-swipe
+```
 ## scripts
 ```
 "start","webpack-dev-server --port 5000 --open --progress --colors",

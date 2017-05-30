@@ -3285,6 +3285,14 @@ react-router@^4.1.1:
     prop-types "^15.5.4"
     warning "^3.0.0"
 
+react-swipe@^5.0.8:
+  version "5.0.8"
+  resolved "http://registry.npm.taobao.org/react-swipe/download/react-swipe-5.0.8.tgz#95cae31f2d74e1b4886f01ffcb72837b375b66eb"
+  dependencies:
+    object-assign "^4.1.0"
+    prop-types "^15.5.7"
+    swipe-js-iso "^2.0.3"
+
 react@^15.5.4:
   version "15.5.4"
   resolved "http://registry.npm.taobao.org/react/download/react-15.5.4.tgz#fa83eb01506ab237cdc1c8c3b1cea8de012bf047"
@@ -3791,6 +3799,10 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+swipe-js-iso@^2.0.3:
+  version "2.0.3"
+  resolved "http://registry.npm.taobao.org/swipe-js-iso/download/swipe-js-iso-2.0.3.tgz#76892ca4fc2928f384ac042739a25f7afe6fcf74"
 
 symbol-observable@^1.0.2:
   version "1.0.4"
