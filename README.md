@@ -42,3 +42,8 @@ $ yarn add swipe-js-iso react-swipe
         - subpage 智能组件
         - index.js
 - index.js 用来控制显示哪一个页面
+
+- store onlyOne
+- actions 用户发布动作
+- reducers 定义规则的
+- action-types action的名字

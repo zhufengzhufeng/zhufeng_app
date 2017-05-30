@@ -6,3 +6,4 @@ export function get(url) {
         Accept:'application/json'
     });
 }
+
