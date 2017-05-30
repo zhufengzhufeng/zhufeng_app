@@ -49,4 +49,4 @@ export default connect(
             userActions:bindActionCreators(Actions,dispatch)
         }
     }
-)(App)
+)(App)//将状态和动作以属性的形式传递给了App
