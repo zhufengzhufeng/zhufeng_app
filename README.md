@@ -14,7 +14,7 @@ $ yarn add babel-core babel-loader babel-preset-es2015 babel-preset-stage-0 babe
 ```
 ## react
 ```
-$ yarn add react redux react-redux react-router-dom 
+$ yarn add react redux react-redux react-router-dom react-dom
 ```
 ## fetch
 ```

@@ -2,7 +2,33 @@
   "name": "zhufeng_app",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --port 3002 --open --progress --colors",
+    "build": "webpack -p"
+  },
   "repository": "https://github.com/zhufengzhufeng/zhufeng_app.git",
   "author": "pamzer156 <1035465285@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "es6-promise": "^4.1.0",
+    "express": "^4.15.3",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
+    "redux": "^3.6.0",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5",
+    "whatwg-fetch": "^2.0.3"
+  }
 }
