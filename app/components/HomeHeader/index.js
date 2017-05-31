@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 //主页头部组件
 import './index.less';
+import {Link} from 'react-router-dom'
 export default class HomeHeader extends Component{
     render(){
         return (
@@ -13,9 +14,11 @@ export default class HomeHeader extends Component{
                     <i className="iconfont icon-sousuo-xianxing"></i>
                     <input type="text"/>
                 </div>
-                <div className="profile">
-                    <i className="iconfont icon-yonghufill"></i>
-                </div>
+                <Link to="/login">
+                    <div className="profile">
+                        <i className="iconfont icon-yonghufill"></i>
+                    </div>
+                </Link>
             </div>
         )
     }
