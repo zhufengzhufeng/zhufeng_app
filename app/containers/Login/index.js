@@ -16,10 +16,27 @@ class Login extends Component{
             <div>
                 <HeaderComponent title="登录" history={this.props.history}/>
                 {/*如果登录过 显示登录组件，否则不显示直接跳转用户页面*/}
-                {this.state.login?<LoginComponent/>:<div></div>}
+                {this.state.login?<LoginComponent login={this.login.bind(this)}/>:<div></div>}
             </div>
         )
     }
+    //在这里我们需要写一个方法，这个方法是登录的，将用户名存入redux里
+    login(username){
+        let info =  this.props.userInfo;
+        info.username = username;
+        //更新redux中的state
+        this.props.userActions.update(info);
+        //登录成功跳转到用户页面
+
+        //如果是从购买进入的需要在跳回购买页
+        if(this.props.match.params.route){
+            this.props.history.push(this.props.match.params.route);
+        }else{
+            //如果没指定跳回哪个页面 默认回到用户页面
+            this.props.history.push('/user');
+        }
+    }
+
     componentDidMount(){
         this.checkLogin();
     }
