@@ -34,7 +34,7 @@ export default class List extends Component{
             isLoading:true//每次加载更多时，状态都应该为正在加载
         },()=>{ //这个函数可以获取到最新的页码的状态
             this.processData(getList(this.props.cityName,this.state.page));
-        })
+        });
     }
 
     //处理成功后的逻辑
