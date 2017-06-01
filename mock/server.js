@@ -31,3 +31,9 @@ app.get('/api/detail/comment/:id/:page',(req,res)=>{
     console.log(req.params.page);
     res.send(comment);
 });
+
+//订单列表 用户名  /api/orderlist/:username
+let orderList = require('./orderlist/orderList');
+app.get('/api/orderlist/:username',((req,res)=>{
+    res.send(orderList);
+}));

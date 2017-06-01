@@ -14,7 +14,7 @@ export default class HeaderComponent extends Component{
     }
     back(){
         if(this.props.back){ //手动跳转到 想要返回的路径
-            this.props.history.push('/');
+            this.props.history.push(this.props.back);
         }else{
             this.props.history.go(-1);
         }
