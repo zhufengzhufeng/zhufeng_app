@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import {getOrderList} from '../../../fetch/orderList'
+import {getOrderList,postComment} from '../../../fetch/orderList'
 import OrderListComponent from "../../../components/OrderListComponent/index";
 export default class OrderList extends Component{
     constructor(){
@@ -19,6 +19,7 @@ export default class OrderList extends Component{
     commitComment(id,comment,callback){ //内容 商户id  callback更改评价状态
         console.log(id,comment);
         //callback()
+        postComment({id,comment}); //提交时传入提交的数据对象即可
     }
     componentDidMount(){
         getOrderList(this.props.username).then(res=>res.json()).then(data=>{
