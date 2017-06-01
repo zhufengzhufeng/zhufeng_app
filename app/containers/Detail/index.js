@@ -4,8 +4,16 @@ import Info from "./subpage/Info";
 import Comment from "./subpage/Conment";
 import Buy from "../../components/Buy/index";
 import {connect} from 'react-redux';
+import * as Actions from '../../actions/store';
+import {bindActionCreators} from 'redux';
 //通过路由渲染的组件都会在this.props上增加很多属性，例如history,match....
 class Detail extends Component{
+    constructor(){
+        super();
+        this.state = {
+            isStore:false
+        }
+    }
     render(){
         return (
             <div>
@@ -15,7 +23,7 @@ class Detail extends Component{
                 <Info id={this.props.match.params.id}/>
 
                 {/*购买和收藏*/}
-                <Buy buy={this.buy.bind(this)} store={this.store.bind(this)}/>
+                <Buy buy={this.buy.bind(this)} store={this.store.bind(this)} isStore={this.state.isStore}/>
 
                 {/*评论*/}
                 <Comment id={this.props.match.params.id}/>
@@ -23,7 +31,17 @@ class Detail extends Component{
         )
     }
     componentDidMount(){
-        //先从redux中获取所有的收藏列表 [] ,如果有显示已收藏，没有就是未收藏
+        //先从redux中获取所有的收藏列表 [] ,如果有显示已收藏，没有就是未收藏i
+        //1.拿到当前商户的id
+        let id = this.props.match.params.id;
+        //2.去收藏的数组中查询
+        //数组的some 如果数组中返回 则返回true 否则为false
+        let flag = this.props.store.some(item=>item===id);
+        if(flag){ //如果收藏过 改变状态为收藏
+            this.setState({
+                isStore:flag
+            });
+        }
     }
     checkLogin(){
         //检测是否登录，登录过返回true 未登录返回false
@@ -46,11 +64,33 @@ class Detail extends Component{
     }
     store(){ //收藏
         //验证是否登录，如果没登录让他去登录，如果登录成功跳回详情页
-
+        let flag = this.checkLogin();
+        if(!flag){ //如果没登录 则跳转到登录页
+            this.props.history.push('/login/'+encodeURIComponent('/detail/'+this.props.match.params.id));
+        }
+        let id = this.props.match.params.id;
+        if(this.state.isStore){
+            //在store中移除掉
+            this.props.storeActions.remove(id);
+        }else{
+            //添加到store中
+            this.props.storeActions.add(id);
+        }
+        this.setState({
+            isStore:!this.state.isStore
+        })
     }
 }
 export default connect(
     state=>{
-        return {userInfo:state.userInfo}
+        return {
+            userInfo:state.userInfo,
+            store:state.store//这里存放的是 收藏的数组
+        }
+    },
+    dispatch=>{
+        return {
+            storeActions:bindActionCreators(Actions,dispatch)
+        }
     }
 )(Detail)
