@@ -6,10 +6,12 @@ export default class HomeHeader extends Component{
     render(){
         return (
             <div className="home-header back">
-                <div className="city">
-                    {this.props.cityName}
-                    <i className="iconfont icon-xiangxia2"></i>
-                </div>
+                <Link to="/city">
+                    <div className="city">
+                        {this.props.cityName}
+                        <i className="iconfont icon-xiangxia2"></i>
+                    </div>
+                </Link>
                 <div className="search">
                     <i className="iconfont icon-sousuo-xianxing"></i>
                     <input type="text"/>
