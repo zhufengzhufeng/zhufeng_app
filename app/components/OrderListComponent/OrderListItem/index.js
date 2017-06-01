@@ -32,19 +32,34 @@ export default class OrderListItem extends Component{
                 {/*当正在评价时出现评论框*/}
                 {
                     this.state.commentState === 1?<div className="comment-area">
-                        <textarea></textarea>
+                        <textarea ref={ref=>this.comment=ref}></textarea>
                         <div>
-                            <button>确认评价</button>
-                            <button>取消</button>
+                            <button onClick={this.sureCommit.bind(this)}>确认评价</button>
+                            <button onClick={this.cancel.bind(this)}>取消</button>
                         </div>
                     </div>:''
                 }
             </div>
         )
     }
+    //
+    changeState(){
+        this.setState({
+            commentState:2
+        })
+    }
+    //确认提交
+    sureCommit(){
+        this.props.commitComment(this.props.data.id,this.comment.value,this.changeState.bind(this));
+    }
     changeCommentState(){
         this.setState({ //改变状态为评价中
             commentState:1
+        })
+    }
+    cancel(){
+        this.setState({ //变为评价状态
+            commentState:0
         })
     }
 }
