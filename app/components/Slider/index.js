@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import ReactSwipe from 'react-swipe'; //轮播图插件
-import './index.less'
+import './index.less';
+import {Link} from 'react-router-dom';
 export default class Slider extends Component{
     constructor(){
         super();
@@ -22,46 +23,46 @@ export default class Slider extends Component{
                 <ReactSwipe className="carousel" swipeOptions={opts}>
                     <div>
                         <ul>
-                            <li>
-                            <i className="iconfont icon-coupons"></i>
-                            <span>美食</span>
-                        </li>
-                            <li>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
-                            <li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
                                 <i className="iconfont icon-coupons"></i>
                                 <span>美食</span>
-                            </li>
+                            </li></Link>
+                            <Link to="/search/jingdian"><li>
+                                <i className="iconfont icon-coupons"></i>
+                                <span>美食</span>
+                            </li></Link>
                         </ul>
                     </div>
                     <div>
