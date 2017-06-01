@@ -33,5 +33,9 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
     "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "extract-text-webpack-plugin": "^2.1.0",
+    "postcss-loader": "^2.0.5"
   }
 }

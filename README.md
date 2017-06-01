@@ -47,3 +47,13 @@ $ yarn add swipe-js-iso react-swipe
 - actions 用户发布动作
 - reducers 定义规则的
 - action-types action的名字
+
+
+## extract-text-webpack-plugin
+- 抽取css的以link标签引入
+
+## postcss-loader
+- 添加前缀
+
+## 配置多入口 verdor
+- 抽离第三方库
